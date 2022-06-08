@@ -4,7 +4,7 @@
 
 import sys
 from PySide6.QtGui import QAction
-from PySide6.QtWidgets import QApplication, QMainWindow, QToolBar
+from PySide6.QtWidgets import QApplication, QMainWindow, QToolBar, QFileDialog
 
 
 class Window(QMainWindow):
@@ -26,7 +26,10 @@ class Window(QMainWindow):
         self.show()
 
     def load(self):
-        pass
+        file_name = QFileDialog.getOpenFileName(self, caption="Open CSV", dir=".", filter="CSV Files (*.csv)")
+
+        if file_name:
+            print(file_name[0])
 
 
 # Press the green button in the gutter to run the script.
