@@ -137,7 +137,7 @@ class Window(QMainWindow):
                         self.table.setItem(current_row + 1, x, item)
 
             # create list with new selected row indexes
-            new_selected_rows = [0 for x in selected_rows]
+            new_selected_rows = [0] * len(selected_rows)
             for s, n in zip(set(selected_rows), new_index):
                 index = [i for i, e in enumerate(selected_rows) if e == s]  # find index of set value
                 for i in index:
